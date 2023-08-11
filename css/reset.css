@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+/*스타일 초기화*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font: 13px 'Noto Sans Korean';
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+img{
+    border: 0;
+}
+.clearflx::after{
+    display: table;
+    clear: both;
+    content: '';
+    
+}  /*오버플로우 히든을 대신해서 사용할 수 있다.*/
