@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.wrap {
+	overflow-y: scroll;
+	min-width: 1280px;
+}
 .page-area {
 	max-width: 1280px;
 	margin: 0 auto;
@@ -7,14 +11,14 @@
 	overflow: hidden;
 }
 /* s: 베너 슬라이드 */
-.wrap {
+.slide-cant {
 	position: relative;
 	margin-bottom: 100px;
 }
-.wrap-slide {
+.slide-inner {
 	overflow: hidden;
 }
-.wrap-slide img {
+.slide-inner img {
 	display: block;
 	width: 100%;
 }
@@ -36,6 +40,30 @@
 	width: 33px;
 	background: #ffc300;
 	border-radius: 42px;
+}
+
+/* 슬라이드 버튼 */
+.inner-swiper .btn_play {
+	appearance: none;
+	border: 0;
+	background-color: transparent;
+	background-image: url(../img/stop_paly_icon.png);
+	background-color: #fff;
+	background-position: 4px 27px;
+	background-size: 58px 28px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	position: absolute;
+	right: 400px;
+	bottom: 42px;
+	z-index: 10;
+	transition: all 0s;
+}
+
+.inner-swiper .btn_play.stop {
+	background-position: 27px 27px;
+	transition: all 0s;
 }
 
 /* e: 베너 슬라이드 */
@@ -105,6 +133,20 @@
 	/* top: 100%; */
 }
 
+.swiper-menu1 .swiper-pagination {
+	left: 50%;
+}
+
+.swiper-menu1 .swiper-pagination-bullet {
+	width: 10px;
+	height: 10px;
+	margin-right: 5px;
+}
+.swiper-menu1 .swiper-pagination-bullet-active {
+	background-color: #009223;
+	box-sizing: border-box;
+}
+
 .food-inner {
 	width: 300px;
 	transition: all 0.3;
@@ -170,7 +212,9 @@
 	background-color: #ffce32;
 	transform: rotate(87deg);
 }
-
+/* .swiper-menu1 {
+	position: relative;
+} */
 .subway-menu ul {
 	display: flex;
 }
@@ -197,16 +241,14 @@
 	display: none;
 }
 .tab-content.current {
-	display: inherit;
-	position: relative;
+	display: block;
 }
 .menu-list-wrap {
 	margin-top: 44px;
 	padding: 0 10px;
-	width: 100%;
-	display: block;
 	overflow: hidden;
 }
+
 /* 서브웨이 메뉴 */
 
 /* s:서브웨이 메뉴 상세 */
@@ -330,7 +372,7 @@
 	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
-	color: #666666;
+	color: #333;
 	letter-spacing: -0.04em;
 	line-height: 1.5;
 }
@@ -338,21 +380,36 @@
 	letter-spacing: -0.04em;
 	margin-bottom: 18px;
 }
+.news-wrap .news_note p > a {
+	color: #292929;
+}
 .news-wrap .news_note p > a:hover {
 	color: #009223;
 	border-bottom: 1px solid #009223;
 	box-sizing: border-box;
 }
-.news-wrap .news_note a {
-	font-size: 16px;
-	color: #292929;
-}
+
 .news-wrap .news_note .more {
-	color: #999999;
-	display: inline-block;
+	position: relative;
 	margin-top: 20px;
+	display: inline-block;
+	background: url(../img/link.png) no-repeat;
+	width: 100px;
+	height: 29px;
+	background-position: 36px 1px;
+	background-size: 24px 24px;
+	color: #000;
+	opacity: 0.7;
 }
 
+/* .news-wrap .news_note .more a {
+	position: absolute;
+
+} */
+.news-wrap .news_note .link-txt {
+	font-size: 16px;
+	color: #333;
+}
 .news-banner img {
 	width: 270px;
 	border-radius: 0 30px 0 30px;
@@ -393,19 +450,21 @@
 	margin: 0 20px;
 }
 .sns_img > ul > li {
-	width: 100%;
 	text-align: center;
-	padding: 20px 10px;
-}
-.sns_img > ul > li img {
-	width: 200px;
-	height: 200px;
-	transition: 0.3s;
-	vertical-align: top; /*이미지 공백 없애기*/
+	margin: 20px;
 }
 .sns_img > ul > li a {
 	display: block;
+	transition: 0.3s;
 }
+.sns_img > ul > li img {
+	object-fit: contain;
+	display: block;
+	width: 200px;
+	height: 200px;
+	object-position: center; /*이미지 공백 없애기*/
+}
+
 .sns_img > ul > li:hover img {
 	transform: scale(1.2);
 }

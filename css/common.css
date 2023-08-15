@@ -28,14 +28,6 @@ img {
 	content: '';
 } /*오버플로우 히든을 대신해서 사용할 수 있다.*/
 
-/* s: 공통 시작 */
-.row_c {
-	max-width: 1280px;
-	margin: 0 auto;
-}
-
-/* e: 공통 끝 */
-
 /* s: top btn */
 /*go_top style*/
 .go_top {
@@ -205,7 +197,6 @@ img {
 }
 
 /*서브 네비게이션*/
-
 .pc_menu > ul > li .nevi_sec {
 	position: absolute;
 	left: 0;

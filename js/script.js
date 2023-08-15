@@ -250,7 +250,7 @@ $(function () {
 // 업데이트
 $(function () {
 	// 메인 상단 슬라이드
-	var swiper = new Swiper('.inner-swiper', {
+	var main_swiper = new Swiper('.inner-swiper', {
 		// slidesPerView: 'auto',
 		centeredSlides: true,
 		pagination: {
@@ -263,17 +263,30 @@ $(function () {
 		},
 	});
 
+	// 비쥬얼 슬라이드 컨트롤러
+	$('.btn_play').click(function () {
+		var state = $(this).hasClass('stop');
+		if (state) {
+			main_swiper.autoplay.start();
+			$(this).removeClass('stop');
+		} else if (!state) {
+			main_swiper.autoplay.stop();
+			$(this).addClass('stop');
+		}
+	});
+
 	var swiper = new Swiper('.swiper-menu1', {
 		slidesPerView: '4', // 한 슬라이드에 보여줄 갯수
 		spaceBetween: 6, // 슬라이드 사이 여백
 		loop: false, // 슬라이드 반복 여부
-		// navigation: {
-		// 	nextEl: '.swiper-button-next',
-		// 	prevEl: '.swiper-button-prev',
-		// },
-		// pagination: {
-		// 	el: '.food-tab1',
-		// },
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
 	});
 });
 
