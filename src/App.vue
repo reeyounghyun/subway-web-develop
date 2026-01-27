@@ -5,7 +5,6 @@
 </template>
 
 <script setup>
-import './assets/css/style.css'
 import Slide from '@/Component/slide.vue'
 </script>
 

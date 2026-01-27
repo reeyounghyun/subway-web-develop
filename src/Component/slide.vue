@@ -12,7 +12,6 @@
     <div class="quick-link">
       <div class="quick-link-wrap">
         <span class="bg-[#ffce32]">매장찾기</span>
-        <div class="p-6 text-2xl font-bold text-red-500">Tailwind OK</div>
         <span>가맹 신청 문의</span>
       </div>
     </div>
