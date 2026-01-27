@@ -1,19 +1,20 @@
 <template>
   <div class="overflow-hidden">
     <div class="slide-wrap">
-      <Swiper
-          :modules="[Autoplay, Pagination, Navigation]"
-          :loop="true"
-          :slides-per-view="1"
-          :speed="700"
-          :autoplay="{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }"
-          :pagination="{ clickable: true }"
-          :navigation="false"
-      >
+      <Swiper :modules="[Autoplay, Pagination, Navigation]" :loop="true" :slides-per-view="1" :speed="700"
+        :autoplay="{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }"
+        :pagination="{ clickable: true }" :navigation="false">
         <SwiperSlide v-for="(item, i) in images" :key="i">
           <img class="slide-img" :src="item.src" :alt="item.alt" />
         </SwiperSlide>
       </Swiper>
+    </div>
+    <div class="quick-link">
+      <div class="quick-link-wrap">
+        <span class="bg-[#ffce32]">매장찾기</span>
+        <div class="p-6 text-2xl font-bold text-red-500">Tailwind OK</div>
+        <span>가맹 신청 문의</span>
+      </div>
     </div>
   </div>
 </template>
@@ -21,6 +22,7 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+
 
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -40,16 +42,13 @@ const images = [
 </script>
 
 <style scoped>
-img {
-  width: 100%;
-}
 .slide-wrap {
   width: 100%;
   max-width: 2560px;
   margin: 0 auto;
 }
 
-@media screen and (min-width:19020px) {
+@media screen and (min-width:1920px) {
   .slide-img {
     width: 100%;
     height: 600px;
@@ -58,6 +57,7 @@ img {
     border-radius: 16px;
   }
 }
+
 .slide-img {
   display: block;
   width: 100%;
@@ -74,8 +74,10 @@ img {
 :deep(.swiper-pagination-bullets) {
   bottom: 12px;
 }
+
 :deep(.swiper-pagination) {
-  bottom: 14px; /* 아래로 내리거나 올리고 싶으면 여기 */
+  bottom: 14px;
+  /* 아래로 내리거나 올리고 싶으면 여기 */
 }
 
 :deep(.swiper-pagination-bullet) {
