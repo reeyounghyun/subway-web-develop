@@ -1,11 +1,15 @@
 <template>
   <div>
-    <Slide />
+    <slide />
+    <card />
+    <menu />
   </div>
 </template>
 
 <script setup>
-import Slide from '@/Component/slide.vue'
+import slide from '@/Component/Slide.vue'
+import card from '@/Component/Card.vue'
+import menu from '@/Component/Menu.vue'
 </script>
 
 
